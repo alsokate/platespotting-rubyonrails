@@ -7,8 +7,12 @@ class ScramblesController < ApplicationController
 	
 	def show_country
     @scramble = Scramble.find_by_code(params[:code].upcase)
-    @country = Country.find(@scramble.country_id)
-    redirect_to country_path (@country)
+    if @scramble.nil?
+      redirect_to '/unknown'
+    else
+       @country = Country.find(@scramble.country_id)
+        redirect_to country_path (@country)
+    end
   end
 
 	def destroy

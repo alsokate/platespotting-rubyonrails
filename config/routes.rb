@@ -5,9 +5,8 @@ Platespotting::Application.routes.draw do
 
   get "home/index"
   
-  
-
   get "show_country" => "scrambles#show_country"
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -59,6 +58,7 @@ Platespotting::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'home#index'
+  match '/unknown', :to => redirect('/unknown.html') 
 
   # See how all your routes lay out with "rake routes"
 
