@@ -1,0 +1,9 @@
+<%= form_for([@country, @country.scrambles.build]) do |f| %>
+  <div class="field">
+    <%= f.label :code %><br />
+    <%= f.text_field :code %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

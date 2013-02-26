@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h2><%= @country.name %></h2>
+</p>
+<br />
+<b>Codes</b>
+<%= render @country.scrambles %>
+
+<br />
+
+<%= link_to 'Back', countries_path %>
